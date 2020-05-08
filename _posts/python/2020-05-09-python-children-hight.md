@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python 孩子身高预测
-categories: [python]
+categories: [Python]
 description: 使用 Python 来预测孩子的身高。
 keywords: python, children, hight
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: javascript 合并两个数组的方法
-categories: [javascript]
+categories: [Javascript]
 description: 使用 javascript 合并两个数组的方法
 keywords: javascript, concat, array
 ---
