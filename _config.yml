@@ -33,7 +33,7 @@ compress_html:
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: hai huang
+author: Hai Huang
 organization: 
 organization_url: 
 github_username: hai1995
@@ -62,11 +62,11 @@ navs:
 
   -
     href: /wiki/
-    label: 维基
+    label: 百科
 
   -
     href: /links/
-    label: 链接
+    label: 友链
 
   -
     href: /about/
