@@ -2,7 +2,8 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://hai1995.github.io
+# url: https://hai1995.github.io
+url: blog.dbixb.top
 date_format: "ordinal"
 title: 奔跑的树懒先生
 subtitle: "暂时没有公众号"
@@ -11,7 +12,8 @@ keywords: 奔跑的树懒先生的博客
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: hai1995/hai1995.github.io
+# repository: hai1995/hai1995.github.io
+repository： hai1995/blog.dbixb.top
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
