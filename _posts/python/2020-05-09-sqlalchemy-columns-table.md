@@ -5,8 +5,7 @@ categories: [Python]
 description: Python 最常用的SQLAlchemy列类型
 keywords: python
 ---
-### 
-    **最常用的SQLAlchemy列类型**
+### **最常用的SQLAlchemy列类型**
 
 <table>
     <thead style="margin: 0px; padding: 0px;">
@@ -213,8 +212,7 @@ keywords: python
     </tbody>
 </table>
 
-### 
-    **最常使用的SQLAlchemy列选项**
+### **最常使用的SQLAlchemy列选项**
 
 <table>
     <thead style="margin: 0px; padding: 0px;">
