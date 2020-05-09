@@ -1,9 +1,9 @@
 ---
 layout: post
-title: javascript 合并两个数组的方法
+title: javascript 监听页面停留，并修改title
 categories: [Javascript]
-description: 使用 javascript 合并两个数组的方法
-keywords: javascript, concat, array
+description: 使用 javascript 监听页面停留，并修改title的方法
+keywords: javascript, listen, edit, title
 ---
 javascript 实现 监听用户当前是否停留在此页面，并且修改页面title。  
 源代码:  
