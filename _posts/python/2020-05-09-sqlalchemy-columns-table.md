@@ -1,4 +1,12 @@
-### **最常用的SQLAlchemy列类型**
+---
+layout: post
+title: Python 最常用的SQLAlchemy列类型
+categories: [Python]
+description: Python 最常用的SQLAlchemy列类型
+keywords: python
+---
+
+### **Python 最常用的SQLAlchemy列类型**
 
 类型名
 
