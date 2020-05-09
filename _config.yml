@@ -1,9 +1,9 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
+baseurl: http://blog.dbixb.top
 # url: https://hai1995.github.io
-url: blog.dbixb.top
+url: http://blog.dbixb.top
 date_format: "ordinal"
 title: 奔跑的树懒先生
 subtitle: "暂时没有公众号"
