@@ -24,21 +24,22 @@ echo "十年后:".date("Y-m-d",strtotime("+10 year"))."<br>";
 ```
 strtotime()函数的作用是将日期时间描述解析为 Unix 时间戳  
 > int strtotime ( string time [, int now] )  
-#### PHP星期几获取代码：  
-1. date("l"); //data就可以获取英文的星期比如Sunday  
 
-2. date("w"); //这个可以获取数字星期比如123，注意0是星期日  
+#### 获取星期几代码：  
+> date("l"); //data就可以获取英文的星期比如Sunday  
+> date("w"); //这个可以获取数字星期比如123，注意0是星期日  
 
-#### 获取中文星期可以这样:  
+#### 获取中文星期:  
 > $weekarray=array("日","一","二","三","四","五","六");  
 > echo "星期".$weekarray[date("w")];  
 
-####  获取指定日期：  
+#### 获取指定日期：  
 > $weekarray=array("日","一","二","三","四","五","六");  
 > echo "星期".$weekarray[date("w","2011-11-11")];  
 
 强大的 [^Date] 函数，可以胜任很多工作。  
-下面附带一个相关的 手册:  
+
+#### 函数相关手册: 
 ```
 a - "am" 或是 "pm"
 
