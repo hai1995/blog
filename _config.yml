@@ -1,9 +1,9 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl: https://hai1995.github.io
-url: https://hai1995.github.io
-# url: http://blog.dbixb.top
+baseurl: 
+# url: https://hai1995.github.io
+url: http://blog.dbixb.top
 date_format: "ordinal"
 title: 奔跑的树懒先生
 subtitle: "暂时没有公众号"
@@ -45,7 +45,8 @@ email: 248437901@qq.com
 # ---------------- #
 #    Navigation    #
 # ---------------- #
-navs: 
+
+navs:
   -
     href: /
     label: 首页
@@ -54,9 +55,9 @@ navs:
     href: /categories/
     label: 分类
 
-   -
-     href: /archives/
-     label: 归档
+#   -
+#     href: /archives/
+#     label: 归档
 
 #   -
 #     href: /open-source/
@@ -64,11 +65,11 @@ navs:
 
   -
     href: /wiki/
-    label: 百科
+    label: 维基
 
   -
     href: /links/
-    label: 友链
+    label: 链接
 
   -
     href: /about/
