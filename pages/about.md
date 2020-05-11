@@ -17,7 +17,7 @@ permalink: /about/
 <li>{{website.sitename }}：<a href="{{ website.url }}" target="_blank">@{{ website.name }}</a></li>
 {% endfor %}
 <li>
-微信公众号：暂时没有公众号
+QQ：248437901
 </li>
 </ul>
 
