@@ -23,7 +23,7 @@
 
 <!-- 网站运行时间 -->
 <div>
-<span id="runtime">1005</span>
+<span id="runtime">1006</span>
 </div>
 <script type="text/javascript">
   setInterval(function(){
@@ -44,6 +44,8 @@
         //var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
     	  var t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond);
         var diff = t2 - t1;
+    console.log(diff);
+    /*
         var diffYears = Math.floor(diff/years);
         var diffDays = Math.floor((diff/days)-diffYears*365);
         var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
@@ -51,5 +53,6 @@
         var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
         var finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
         document.getElementById("runtime").innerHTML=finallyShowTime;
+        */
   }, 1000);
 </script>
