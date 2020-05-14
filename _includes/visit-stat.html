@@ -21,11 +21,12 @@
 </div>
 {% endif %}
 
-<span id="runtime">333</span>
+<span id="runtime">444</span>
 <script type="text/javascript">
     function runTime(){
       console.log('time')
     }
-    window.setInterval(runTime(), 1000);
+    setInterval(runTime(), 1000);
+  setInterval('console.log("Hello");', 3000);
   console.log('end')
 </script>
