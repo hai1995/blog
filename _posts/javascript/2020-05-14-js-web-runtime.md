@@ -12,15 +12,14 @@ keywords: javascript, web, runtime
 <span id="runtime"></span>
 <script language=javascript>
     function runTime(){
-        window.setTimeout("runTime()", 1000);
-        var seconds = 1000;
-        var minutes = seconds * 60;
-        var hours = minutes * 60;
-        var days = hours * 24;
-        var years = days * 365;
+         var seconds = 1000;
+        var minutes = 1000 * 60;
+        var hours = 1000 * 60 * 60;
+        var days =  1000 * 60 * 60 * 24;
+        var years = 1000 * 60 * 60 * 24 * 365;
         var today = new Date();
         var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth()+1;
+        var todayMonth = today.getMonth() + 1;
         var todayDate = today.getDate();
         var todayHour = today.getHours();
         var todayMinute = today.getMinutes();
@@ -35,7 +34,7 @@ keywords: javascript, web, runtime
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数
         */
-        var t1 = Date.UTC(2016,12,01,00,00,00); //北京时间2016-12-1 00:00:00
+        var t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
         var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
         var diff = t2-t1;
         var diffYears = Math.floor(diff/years);
@@ -43,8 +42,9 @@ keywords: javascript, web, runtime
         var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
         var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
         var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-        document.getElementById("runtime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+        var finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+        document.getElementById("runtime").innerHTML=finallyShowTime;
     }
-    runTime();
+     setInterval('runTime();', 1000);
 </script>
 ```
