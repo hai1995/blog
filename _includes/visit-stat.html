@@ -23,7 +23,7 @@
 
 <!-- 网站运行时间 -->
 <div>
-<span id="runtime">1004</span>
+<span id="runtime">1005</span>
 </div>
 <script type="text/javascript">
   setInterval(function(){
@@ -40,9 +40,9 @@
         var todayMinute = today.getMinutes();
         var todaySecond = today.getSeconds();
         //var t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
-    	  var t1 = new Date("2016/08/03 00:00:00")
+    	  var t1 = new Date("2016/08/03 00:00:00");
         //var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-    	  var t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond)
+    	  var t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff/years);
         var diffDays = Math.floor((diff/days)-diffYears*365);
