@@ -21,15 +21,15 @@
 </div>
 {% endif %}
 
-<span id="runtime">777</span>
+<span id="runtime">888</span>
 <script type="text/javascript">
     function runTime(){
         
         var seconds = 1000;
-        var minutes = 1000 * 60;
-        var hours = 1000 * 60 * 60;
-        var days = 1000 * 60 * 60 * 24;
-        var years = 1000 * 60 * 60 * 24 * 365;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
         var today = new Date();
         console.log(today);
         
@@ -51,7 +51,7 @@
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数
         */
-      /*
+      
         var t1 = Date.UTC(2016,12,01,00,00,00); //北京时间2016-12-1 00:00:00
         var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
         var diff = t2-t1;
@@ -61,7 +61,7 @@
         var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
         var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
         //var finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-        */
+        
         var finallyShowTime="12321321321321";
         document.getElementById("runtime").innerHTML=finallyShowTime;
         console.log(finallyShowTime);
