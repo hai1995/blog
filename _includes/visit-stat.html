@@ -22,7 +22,7 @@
 {% endif %}
 
 <div>
-<span id="runtime">1001</span>
+<span id="runtime">1002</span>
 </div>
 <script type="text/javascript">
     function runTime(){
@@ -44,7 +44,7 @@
         
         
         var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth()+1;
+        var todayMonth = today.getMonth() + 1;
         var todayDate = today.getDate();
         var todayHour = today.getHours();
         var todayMinute = today.getMinutes();
@@ -60,7 +60,7 @@
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数
         */
-        console.log(todayYear)
+        console.log(todayYear);
         //var t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
         //var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
         //var diff = t2-t1;
