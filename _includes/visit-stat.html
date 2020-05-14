@@ -26,8 +26,8 @@
 <span id="runtime">1003</span>
 </div>
 <script type="text/javascript">
-    function runTime(){
-         var seconds = 1000;
+  setInterval(function(){
+  	var seconds = 1000;
         var minutes = 1000 * 60;
         var hours = 1000 * 60 * 60;
         var days =  1000 * 60 * 60 * 24;
@@ -50,10 +50,10 @@
         microseconds - 0-999之间的整数，做为date对象的毫秒数
         */
         //var t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
-		    var t1 = new Date("2016/08/03 00:00:00")
+    	var t1 = new Date("2016/08/03 00:00:00")
         //var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-		    var t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond)
-        var diff = t2-t1;
+    	var t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond)
+        var diff = t2 - t1;
         var diffYears = Math.floor(diff/years);
         var diffDays = Math.floor((diff/days)-diffYears*365);
         var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
@@ -61,7 +61,5 @@
         var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
         var finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
         document.getElementById("runtime").innerHTML=finallyShowTime;
-    }
-  setInterval('runTime();', 1000);
-  console.log('end');
+  }, 1000);
 </script>
