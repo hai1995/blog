@@ -1,7 +1,5 @@
     <footer class="container">
 
-      {% include footer-ad.html %}
-
         <div class="site-footer" role="contentinfo">
             <div class="copyright left mobile-block">
                     © 2020
@@ -9,12 +7,12 @@
                       document.write(new Date().getFullYear())
                     </script> -->
                     <span title="{{ site.author}}">{{ site.author }}</span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">Go TOP</a>
+                    <a href="javascript:window.scrollTo(0,0)" title="回到顶部" class="right mobile-visible"><span class="octicon octicon-arrow-up"></span></a>
             </div>
 
             <ul class="site-footer-links right mobile-hidden">
                 <li>
-                    <a href="javascript:window.scrollTo(0,0)" >Go TOP</a>
+                    <a href="javascript:window.scrollTo(0,0)" title="回到顶部"> <span class="octicon-arrow-up"></span> </a>
                 </li>
             </ul>
             <!-- <a href="{{ site.github.repository_url }}" target="_blank" aria-label="view source code">
