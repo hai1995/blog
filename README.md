@@ -1,6 +1,6 @@
 # 奔跑的树懒先生
 
-我的个人博客：<https://blog.dbixb.top>，欢迎 Star 和 Fork。
+我的个人博客：<https://blog.dbixb.top>，欢迎 学习交流。
 
 ## 概览
 
@@ -45,24 +45,11 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
    * \_posts 文件夹中是我已发布的博客文章。
    * \_drafts 文件夹中是我尚未发布的博客文章。
-   * \_wiki 文件夹中是我已发布的 wiki 页面。
    * images 文件夹中是我的文章和页面里使用的图片。
 
 5. 修改「关于」页面。
 
    pages/about.md 文件内容对应网站的「关于」页面，里面的内容多为个人相关，将它们替换成你自己的信息，包括 \_data 目录下的 skills.yml 和 social.yml 文件里的数据。
-
-## 经验与思考  
-
-* 简约，尽量每个页面都不展示多余的内容。  
-
-* 有时一图抵千言，有时可能只会拖慢网页加载速度。  
-
-* 如果写技术文章，那先将技术原理完全理清了再开始写，一边摸索技术一边组织文章效率较低。  
-
-* 行文简洁优雅。  
-
-* 学习一下那些高质量的博主，他们的行文，内容组织方式，有什么值得借鉴的地方。  
 
 ## 联系我  
 
@@ -74,7 +61,7 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
 Thanks for JetBrains' support.
 
-<a href="https://www.jetbrains.com/?from=mzlogin.github.io"><img src="./assets/images/jetbrains.svg"/></a>
+<a href="https://www.jetbrains.com/?from=hai1995.github.io"><img src="./assets/images/jetbrains.svg"/></a>
 
 [1]: https://github.com/mzlogin/chinese-copywriting-guidelines
 [2]: https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/

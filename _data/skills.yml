@@ -1,9 +1,6 @@
-- name: 语言能力
+- name: 技术栈
   keywords:
-      - Javascript
+      - JavaScript
       - PHP
       - Python
-
-- name: 软件能力
-  keywords:
-      - photo shop
+      - Node
