@@ -1,6 +1,6 @@
 # 奔跑的树懒先生
 
-我的个人博客：<https://blog.dbixb.top>，欢迎 学习交流。
+我的个人博客：[https://hai1995.github.io/blog/]<https://hai1995.github.io/blog/>，欢迎 学习交流。
 
 ## 概览
 
