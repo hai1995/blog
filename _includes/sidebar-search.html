@@ -28,7 +28,7 @@ searchBox.addEventListener('input', function() {
 SimpleJekyllSearch({
     searchInput: searchBox,
     resultsContainer: searchResults,
-    json: '/assets/search_data.json',
+    json: 'https://hai1995.github.io/blog/assets/search_data.json',
     searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
     noResultsText: 'No results found',
     limit: {{ site.simple_jekyll_search.limit }},
