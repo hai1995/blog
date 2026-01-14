@@ -2,9 +2,9 @@
 layout: default
 ---
 
-{% assign assets_base_url = site.url %} 
-{% if site.cdn.jsdelivr.enabled %} 
-  {% assign assets_base_url = "https://cdn.jsdelivr.net/gh/" | append:site.repository %} 
+{% assign assets_base_url = '' %}
+{% if site.cdn.jsdelivr.enabled %}
+  {% assign assets_base_url = "https://cdn.jsdelivr.net/gh/" | append:site.repository %}
 {% endif %}
 <section
   class="collection-head small geopattern"
