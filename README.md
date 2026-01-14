@@ -16,7 +16,7 @@
 
 ## 效果预览
 
-**[在线预览 &rarr;](https://blog.dbixb.top)**  
+**[在线预览 &rarr;](https://hai1995.github.io/blog)**  
 
 ## Fork 指南
 

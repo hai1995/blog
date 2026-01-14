@@ -11,8 +11,7 @@ keywords: 奔跑的树懒先生的博客
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: hai1995.github.io/blog
-# repository： hai1995/blog.dbixb.top
+repository: hai1995/blog
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
@@ -132,7 +131,7 @@ lazy_load_disqus : false
 # ---------------- #
 simple_jekyll_search:
     # 是否支持全文搜索
-    fulltext: true
+    fulltext: false
     # 最多显示多少条搜索结果
     limit: 10
 
