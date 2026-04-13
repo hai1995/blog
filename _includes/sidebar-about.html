@@ -1,0 +1,25 @@
+<h3>关于我</h3>
+<div class="sidebar-about">
+    <div class="about-avatar">
+        <img src="{{ assets_base_url }}/images/avatar.png" alt="{{ site.author }}" onerror="this.parentElement.innerHTML='<div class=\'avatar-placeholder\'>{{ site.author | slice: 0 }}</div>'">
+    </div>
+    <h4 class="about-name">{{ site.author }}</h4>
+    <p class="about-desc">{{ site.description }}</p>
+    <div class="about-links">
+        {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub">
+            <span class="octicon octicon-mark-github"></span>
+        </a>
+        {% endif %}
+        {% if site.email %}
+        <a href="mailto:{{ site.email }}" target="_blank" title="Email">
+            <span class="octicon octicon-mail"></span>
+        </a>
+        {% endif %}
+        {% if site.subscribe_rss %}
+        <a href="{{ site.url }}{{ site.baseurl }}{{ site.subscribe_rss }}" target="_blank" title="RSS">
+            <span class="octicon octicon-rss"></span>
+        </a>
+        {% endif %}
+    </div>
+</div>

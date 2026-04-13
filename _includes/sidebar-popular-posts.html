@@ -1,0 +1,16 @@
+
+<h3>热门文章</h3>
+<ul class="list-group popular-posts">
+    {% assign sorted_posts = site.posts | sort: 'url' %}
+    {% for post in sorted_posts limit:5 %}
+    <li class="list-group-item">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">
+            {{ post.title }}
+        </a>
+        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    {% endfor %}
+</ul>
+<p class="text-muted" style="font-size:12px;text-align:center;margin-top:10px;">
+    暂无浏览量统计，数据按时间排序
+</p>
