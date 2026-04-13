@@ -44,7 +44,7 @@ body {
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%236366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>') 16 16, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" stop-color="%236366f1"/><stop offset="100%25" stop-color="%23ec4899"/></linearGradient></defs><path d="M4 4 L12 20 L14 14 L20 12 L4 4Z" fill="url(%23g)" stroke="%23fff" stroke-width="1" stroke-linejoin="round"/></svg>') 0 0, pointer;
   overflow-x: hidden;
 }
 
@@ -275,12 +275,28 @@ body a, body button, body .clickable {
 /* 页脚样式 */
 .site-footer {
   margin-top: 5rem;
-  padding: 3rem 0;
-  border-top: 1px solid var(--border-color);
-  background: rgba(15, 23, 42, 0.4);
+  padding: 3rem 0 2rem;
+  background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(20px);
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 20px rgba(99, 102, 241, 0.1);
+  position: relative;
   animation: fadeInUp 0.8s ease-out;
+}
+
+/* 页脚顶部渐变装饰线 */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--primary-color) 20%, 
+    var(--secondary-color) 50%, 
+    var(--primary-light) 80%, 
+    transparent 100%);
+  box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(99, 102, 241, 0.3);
 }
 
 .site-footer .container {
@@ -289,44 +305,106 @@ body a, body button, body .clickable {
   padding: 0 1.5rem;
 }
 
+/* 页脚内容布局 */
+.site-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 社交链接 */
+.site-footer-social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.site-footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(51, 65, 85, 0.5);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.site-footer-social a:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-color: transparent;
+  color: white;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.site-footer-social .octicon {
+  font-size: 1.25rem;
+}
+
 .site-footer .copyright {
   color: var(--text-muted);
   font-size: 0.875rem;
   text-align: center;
+  margin-top: 1rem;
+}
+
+.site-footer .copyright a {
+  color: var(--primary-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer .copyright a:hover {
+  color: var(--primary-color);
 }
 
 .site-footer-links {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .site-footer-links li a {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.875rem;
-  transition: var(--transition-slow);
+  transition: all 0.3s ease;
   position: relative;
   padding: 0.25rem 0;
 }
 
+.site-footer-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
 .site-footer-links li a:hover {
   color: var(--primary-light);
-  text-shadow: 0 0 10px var(--primary-light);
 }
 
-.site-footer .octicon-mark-github {
-  color: var(--text-muted);
-  transition: var(--transition-slow);
-  font-size: 1.25rem;
+.site-footer-links li a:hover::after {
+  width: 100%;
 }
 
-.site-footer .octicon-mark-github:hover {
-  color: var(--primary-light);
-  transform: scale(1.2) rotate(10deg);
-  text-shadow: 0 0 15px var(--primary-light);
+/* 返回顶部按钮在页脚上方时的间距 */
+.site-footer + .tools-wrapper,
+.tools-wrapper {
+  bottom: 2rem;
 }
 
 /* 卡片和列表样式 */
@@ -621,6 +699,15 @@ body a, body button, body .clickable {
   font-size: 1.25rem;
 }
 
+/* 回到顶部按钮 SVG 箭头图标 */
+.tools-wrapper a .arrow-up-icon {
+  transition: transform 0.3s ease;
+}
+
+.tools-wrapper a:hover .arrow-up-icon {
+  transform: translateY(-3px);
+}
+
 /* Markdown 内容样式 */
 .markdown-body {
   color: var(--text-primary);
@@ -790,10 +877,14 @@ body a, body button, body .clickable {
   border-bottom: 1px solid var(--border-color);
   text-align: left;
   transition: var(--transition-slow);
+  /* 覆盖文章内联样式的白色背景 */
+  background-color: rgba(30, 41, 59, 0.6) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
 }
 
 .markdown-body table th {
-  background: rgba(51, 65, 85, 0.8);
+  background: rgba(51, 65, 85, 0.8) !important;
   font-weight: 600;
   color: var(--text-primary);
   position: sticky;
@@ -1105,4 +1196,175 @@ body a, body button, body .clickable {
 
 pre {
   border: 1px solid var(--border-color);
+}
+
+/* ========================
+   全局深色主题适配
+   ======================== */
+
+/* 文章内容容器 */
+.post,
+.article-content,
+.article,
+.post-content,
+.page-content,
+main article,
+article.post {
+  background: transparent !important;
+}
+
+/* 代码块 - 包括纯文本代码块 */
+.markdown-body pre,
+.markdown-body pre code,
+.post pre,
+.post pre code,
+article pre,
+article pre code,
+pre.code,
+pre.language-,
+.highlight pre,
+.highlight {
+  background: rgba(30, 41, 59, 0.8) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* 内联代码 */
+.markdown-body code:not([class]),
+.post :not(pre) > code,
+article :not(pre) > code,
+code {
+  background: rgba(30, 41, 59, 0.8) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* 所有 div 和 section 的默认背景 */
+.post > div,
+.article > div,
+.page > div,
+.post-content > div {
+  background: transparent !important;
+}
+
+/* blockquote 内部 */
+.markdown-body blockquote {
+  background: rgba(30, 41, 59, 0.6) !important;
+  color: var(--text-secondary) !important;
+  border-left: 4px solid var(--primary-color) !important;
+}
+
+/* 图片容器 */
+.markdown-body figure,
+.markdown-body .highlight {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+}
+
+/* 列表项 */
+.markdown-body li,
+.post li,
+.article li {
+  color: var(--text-primary);
+}
+
+/* 水平线 */
+.markdown-body hr {
+  border-color: var(--border-color);
+  background: var(--border-color);
+}
+
+/* 强调文本 */
+.markdown-body strong,
+.markdown-body b {
+  color: var(--text-primary);
+}
+
+.markdown-body em,
+.markdown-body i {
+  color: var(--text-secondary);
+}
+
+/* 段落 */
+.markdown-body p {
+  color: var(--text-primary);
+}
+
+/* 表格容器 */
+.table-wrapper,
+.markdown-body .table-wrapper {
+  background: transparent !important;
+  overflow-x: auto;
+}
+
+/* Gitalk 评论框 */
+.gt-container,
+.gt-header,
+.gt-comments,
+.gt-comment-content {
+  background: var(--card-background) !important;
+  color: var(--text-primary) !important;
+}
+
+.gt-comment-body {
+  color: var(--text-primary) !important;
+}
+
+/* ========================
+   覆盖内联样式的文档信息框
+   ======================== */
+
+/* 文档信息框 - 覆盖内联样式 */
+.markdown-body div[style*="background-color:#f1f4f7"],
+.markdown-body div[style*="background-color: #f1f4f7"],
+.markdown-body div[style*="background-color:#f1f4f7;"],
+.post div[style*="background-color:#f1f4f7"],
+.post div[style*="background-color: #f1f4f7"],
+.post div[style*="#f1f4f7"],
+article div[style*="#f1f4f7"],
+.markdown-body > div:last-child,
+.post > div:last-child,
+.article > div:last-child {
+  background: var(--card-background) !important;
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid var(--border-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* 文档信息框内的文字 */
+.markdown-body div[style*="#f1f4f7"] p,
+.markdown-body div[style*="#f1f4f7"] li,
+.markdown-body div[style*="#f1f4f7"] ul,
+.post div[style*="#f1f4f7"] p,
+.post div[style*="#f1f4f7"] li,
+.post div[style*="#f1f4f7"] ul {
+  color: var(--text-primary) !important;
+}
+
+/* 文档信息框内的链接 */
+.markdown-body div[style*="#f1f4f7"] a,
+.post div[style*="#f1f4f7"] a {
+  color: var(--primary-light) !important;
+}
+
+.markdown-body div[style*="#f1f4f7"] a:hover,
+.post div[style*="#f1f4f7"] a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* 通用规则：覆盖文章内所有带浅色背景的 div */
+.markdown-body div[style*="background-color"],
+.post div[style*="background-color"],
+article div[style*="background-color"],
+.post-content div[style*="background-color"] {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+/* 通用规则：覆盖文章内带浅色边框的 div */
+.markdown-body div[style*="border:"],
+.post div[style*="border:"],
+article div[style*="border:"] {
+  border-color: var(--border-color) !important;
 }

@@ -10,7 +10,7 @@ keywords: javascript, array, reduce
 
 ### 目标多维数组
 ```
-	var manyArray = [1, [2, [3, [4, [5]]]]]
+	let manyArray = [1, [2, [3, [4, [5]]]]]
 ```
 
 ## 1、 使用 reduce 转换 

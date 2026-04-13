@@ -16,7 +16,7 @@ keywords: javascript,recursion,sum
  numLength: 需要加的长度
  -->
  function add(num1,num2,numLength){
-	var num = num1+num2;
+	let num = num1+num2;
     if(num2 + 1 > numLength){
 		return num;
 	}else{
@@ -24,6 +24,6 @@ keywords: javascript,recursion,sum
     }
  }
 // 从 1 开始 加到 100
-var sum = add(1,2,100);
+let sum = add(1,2,100);
 </script>
 ```

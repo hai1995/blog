@@ -27,31 +27,31 @@
 </div>
 <script type="text/javascript">
   setInterval(function(){
-  	var seconds = 1000;
-        var minutes = 1000 * 60;
-        var hours = 1000 * 60 * 60;
-        var days =  1000 * 60 * 60 * 24;
-        var years = 1000 * 60 * 60 * 24 * 365;
-        var today = new Date();
-        var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth() + 1;
-        var todayDate = today.getDate();
-        var todayHour = today.getHours();
-        var todayMinute = today.getMinutes();
-        var todaySecond = today.getSeconds();
-        //var t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
-    	  var t1 = new Date("2016/08/03 00:00:00");
-        //var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-    	  var t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond);
-        var diff = t2 - t1;
+  	let seconds = 1000;
+        let minutes = 1000 * 60;
+        let hours = 1000 * 60 * 60;
+        let days =  1000 * 60 * 60 * 24;
+        let years = 1000 * 60 * 60 * 24 * 365;
+        let today = new Date();
+        let todayYear = today.getFullYear();
+        let todayMonth = today.getMonth() + 1;
+        let todayDate = today.getDate();
+        let todayHour = today.getHours();
+        let todayMinute = today.getMinutes();
+        let todaySecond = today.getSeconds();
+        //let t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
+    	  let t1 = new Date("2016/08/03 00:00:00");
+        //let t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    	  let t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond);
+        let diff = t2 - t1;
     console.log(diff);
     /*
-        var diffYears = Math.floor(diff/years);
-        var diffDays = Math.floor((diff/days)-diffYears*365);
-        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-        var finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+        let diffYears = Math.floor(diff/years);
+        let diffDays = Math.floor((diff/days)-diffYears*365);
+        let diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        let diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        let diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        let finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
         document.getElementById("runtime").innerHTML=finallyShowTime;
         */
   }, 1000);
