@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign assets_base_url = '' %}
+{% assign assets_base_url = site.baseurl %}
 {% if site.cdn.jsdelivr.enabled %}
   {% assign assets_base_url = "https://cdn.jsdelivr.net/gh/hai1995/blog" %}
 {% endif %}
@@ -24,7 +24,7 @@ layout: default
             {% endif %} {% for cat in page.categories %}
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
-              <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}"
+              <a href="{{ site.url }}{{ site.baseurl }}/categories/#{{ cat }}" title="{{ cat }}"
                 >{{ cat }}</a
               >
             </span>
