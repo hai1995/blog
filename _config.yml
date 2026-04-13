@@ -1,7 +1,7 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl: 
+baseurl: /blog
 url: https://hai1995.github.io
 date_format: "ordinal"
 title: 奔跑的树懒先生
