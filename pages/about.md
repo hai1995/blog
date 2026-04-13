@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: 关于
 description: 奔跑的树懒先生
 keywords: Hai Huang, 奔跑的树懒先生
 comments: true

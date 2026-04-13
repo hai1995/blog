@@ -538,7 +538,7 @@ body a, body button, body .clickable {
 }
 
 .meta-info a {
-  color: var(--text-muted);
+  color: #fff;
   text-decoration: none;
   transition: var(--transition-slow);
 }
@@ -549,7 +549,7 @@ body a, body button, body .clickable {
 }
 
 .meta-info .octicon {
-  color: var(--primary-color);
+  color: #fff;
   transition: var(--transition);
 }
 

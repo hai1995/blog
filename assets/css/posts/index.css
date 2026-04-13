@@ -186,7 +186,7 @@
     border: 1px solid var(--border-color, rgba(51, 65, 85, 0.6));
 }
 
-.about-avatar{
+.about-avatar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,6 +199,12 @@
     border-radius: 50%;
     border: 3px solid var(--primary-color, #6366f1);
     margin-bottom: 10px;
+    transition: transform 0.4s ease;
+}
+
+.about-avatar:hover img,
+.about-avatar:hover .avatar-placeholder {
+    transform: rotate(360deg) scale(1.1);
 }
 
 .avatar-placeholder {
@@ -286,20 +292,4 @@
     color: var(--primary-light, #818cf8) !important;
 }
 
-/* 搜索框样式优化 */
-#site_search input {
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid var(--border-color, rgba(51, 65, 85, 0.6));
-    color: var(--text-primary, #f1f5f9);
-    border-radius: 0.5rem;
-    padding: 8px 12px;
-}
 
-#site_search input::placeholder {
-    color: var(--text-muted, #94a3b8);
-}
-
-#site_search input:focus {
-    outline: none;
-    border-color: var(--primary-color, #6366f1);
-}
