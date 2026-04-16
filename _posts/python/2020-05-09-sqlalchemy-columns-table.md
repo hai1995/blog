@@ -1,270 +1,106 @@
 ---
 layout: post
-title: Python 最常用的SQLAlchemy列类型
+title: Python 最常用的 SQLAlchemy 列类型
 categories: [Python]
-description: Python 最常用的SQLAlchemy列类型
-keywords: python
+description: 整理了 SQLAlchemy 中最常用的列类型及其 Python 对应类型。
+keywords: python, sqlalchemy, database, orm
 ---
-### **最常用的SQLAlchemy列类型**
 
-<table>
-    <thead style="margin: 0px; padding: 0px;">
-        <tr style="margin: 0px; padding: 0px;" class="firstRow">
-            <th style="margin: 0px; padding: 8px 14px; background-color: rgb(250, 250, 250); border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                类型名
-            </th>
-            <th style="margin: 0px; padding: 8px 14px; background-color: rgb(250, 250, 250); border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Python类型
-            </th>
-            <th style="margin: 0px; padding: 8px 14px; background-color: rgb(250, 250, 250); border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                说 明
-            </th>
-        </tr>
-    </thead>
-    <tbody style="margin: 0px; padding: 0px;">
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Integer
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                int
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                普通整数,一般是 32 位
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                SmallInteger
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                int
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                取值范围小的整数,一般是 16 位
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                BigInteger
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                int 或 long
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                不限制精度的整数
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Float
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                float
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                浮点数
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Numeric
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                decimal.Decimal
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                定点数
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                String
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                str
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                变长字符串
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Text
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                str
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                变长字符串,对较长或不限长度的字符串做了优化
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Unicode
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                unicode
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                变长 Unicode 字符串
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                UnicodeText
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                unicode
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                变长 Unicode 字符串,对较长或不限长度的字符串做了优化
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Boolean
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                bool
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                布尔值
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Date
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                datetime.date
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                日期
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Time
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                datetime.time
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                时间
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                DateTime
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                datetime.datetime
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                日期和时间
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Interval
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                datetime.timedelta
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                时间间隔
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                Enum
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                str
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                一组字符串
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                PickleType
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                任何 Python 对象
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                自动使用 Pickle 序列化
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                LargeBinary
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                str
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                二进制文件
-            </td>
-        </tr>
-    </tbody>
-</table>
+## 前言
 
-### **最常使用的SQLAlchemy列选项**
+SQLAlchemy 是 Python 中最流行的 ORM 框架之一。本文整理了最常用的列类型，方便查阅。
 
-<table>
-    <thead style="margin: 0px; padding: 0px;">
-        <tr style="margin: 0px; padding: 0px;" class="firstRow">
-            <th style="margin: 0px; padding: 8px 14px; background-color: rgb(250, 250, 250); border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                选项名
-            </th>
-            <th style="margin: 0px; padding: 8px 14px; background-color: rgb(250, 250, 250); border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                说 明
-            </th>
-        </tr>
-    </thead>
-    <tbody style="margin: 0px; padding: 0px;">
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                primary_key
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                如果设为 True ,这列就是表的主键
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                unique
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                如果设为 True ,这列不允许出现重复的值
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                index
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                如果设为 True ,为这列创建索引,提升查询效率
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                nullable
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                如果设为 True ,这列允许使用空值;如果设为 False ,这列不允许使用空值
-            </td>
-        </tr>
-        <tr style="margin: 0px; padding: 0px;">
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                default
-            </td>
-            <td style="margin: 0px; padding: 8px 14px; border-color: rgb(192, 192, 192); border-collapse: collapse; min-width: 50px;">
-                为这列定义默认值
-            </td>
-        </tr>
-    </tbody>
-</table>
+## 常用列类型
+
+| 类型名 | Python 类型 | 说明 |
+|--------|-------------|------|
+| Integer | int | 普通整数，通常 32 位 |
+| SmallInteger | int | 小范围整数，通常 16 位 |
+| BigInteger | int/long | 不限制精度的整数 |
+| Float | float | 浮点数 |
+| Numeric | decimal.Decimal | 定点数，适用于货币 |
+| String | str | 变长字符串 |
+| Text | str | 长文本，对较长字符串做了优化 |
+| Unicode | unicode | Unicode 字符串 |
+| UnicodeText | unicode | 长 Unicode 文本 |
+| Boolean | bool | 布尔值 |
+| Date | datetime.date | 日期 |
+| Time | datetime.time | 时间 |
+| DateTime | datetime.datetime | 日期和时间 |
+| Interval | datetime.timedelta | 时间间隔 |
+| Enum | str | 枚举类型 |
+| PickleType | Python 对象 | 自动 Pickle 序列化 |
+| LargeBinary | bytes | 二进制数据 |
+
+## 常用列选项
+
+| 选项名 | 说明 |
+|--------|------|
+| primary_key | 设为 True 表示该列为主键 |
+| unique | 设为 True 表示该列值唯一 |
+| index | 设为 True 为该列创建索引 |
+| nullable | 设为 False 表示该列不允许为空 |
+| default | 设置默认值 |
+
+## 使用示例
+
+```python
+from sqlalchemy import create_engine, Column, Integer, String, Boolean, DateTime
+from sqlalchemy.ext.declarative import declarative_base
+from datetime import datetime
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = 'users'
+    
+    id = Column(Integer, primary_key=True)           # 主键
+    username = Column(String(50), unique=True)       # 用户名，唯一
+    email = Column(String(100), nullable=False)      # 邮箱，不允许空
+    is_active = Column(Boolean, default=True)        # 是否激活，默认 True
+    created_at = Column(DateTime, default=datetime.now)  # 创建时间
+    
+    def __repr__(self):
+        return f'<User {self.username}>'
+```
+
+## 数值类型详解
+
+```python
+# 整数
+Column(Integer)           # 32 位整数
+Column(SmallInteger)     # 16 位整数
+Column(BigInteger)        # 无限制整数
+
+# 浮点数
+Column(Float(precision=10))      # 浮点数，指定精度
+Column(Numeric(10, 2))          # 定点数，共 10 位，小数点后 2 位（适合金额）
+```
+
+## 字符串类型详解
+
+```python
+Column(String(255))              # 变长字符串，最大 255 字符
+Column(String)                   # 默认 255 字符
+Column(Text)                     # 长文本，无长度限制
+Column(Unicode(255))             # Unicode 字符串
+Column(UnicodeText)             # 长 Unicode 文本
+```
+
+## 日期时间类型详解
+
+```python
+from datetime import datetime, date, time, timedelta
+
+Column(Date)                     # 仅日期
+Column(Time)                     # 仅时间
+Column(DateTime)                 # 日期和时间
+Column(Interval)                 # 时间间隔
+```
+
+## 注意事项
+
+1. **String vs Text**：短字符串用 `String`，长文本用 `Text`
+2. **Numeric vs Float**：涉及金钱计算时用 `Numeric`，避免浮点精度问题
+3. **nullable**：主键列默认 `nullable=False`
+4. **index**：频繁查询的列建议设置 `index=True` 提升性能
