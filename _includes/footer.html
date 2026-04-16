@@ -51,12 +51,82 @@
     <script src="{{ assets_base_url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
     {% endif %}
     <script src="{{ assets_base_url }}/assets/js/geopattern.js"></script>
+    <!-- 代码复制按钮功能 -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+    <style>
+    /* 代码复制按钮样式 */
+    .code-wrapper {
+        position: relative;
+    }
+    .code-copy-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        padding: 4px 8px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 4px;
+        color: #cbd5e1;
+        font-size: 12px;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    .code-wrapper:hover .code-copy-btn {
+        opacity: 1;
+    }
+    .code-copy-btn:hover {
+        background: rgba(255,255,255,0.2);
+        color: #fff;
+    }
+    .code-copy-btn.copied {
+        color: #22c55e;
+    }
+    </style>
     <script>
       jQuery(document).ready(function($) {
         $('.geopattern').each(function(){
           $(this).geopattern($(this).data('pattern-id'));
         });
-       /* hljs.initHighlightingOnLoad(); */
+        
+        // 为所有代码块添加复制功能
+        $('pre').each(function() {
+            var $pre = $(this);
+            var $code = $pre.find('code').first();
+            if ($code.length) {
+                $pre.addClass('code-wrapper');
+                var $btn = $('<button class="code-copy-btn" data-copy="true">复制</button>');
+                $pre.append($btn);
+            }
+        });
+        
+        // 初始化 clipboard.js
+        var clipboard = new ClipboardJS('.code-copy-btn', {
+            text: function(trigger) {
+                var $pre = $(trigger).parent();
+                return $pre.find('code').text();
+            }
+        });
+        
+        clipboard.on('success', function(e) {
+            var $btn = $(e.trigger);
+            $btn.text('已复制!');
+            $btn.addClass('copied');
+            setTimeout(function() {
+                $btn.text('复制');
+                $btn.removeClass('copied');
+            }, 2000);
+            e.clearSelection();
+        });
+        
+        clipboard.on('error', function(e) {
+            var $btn = $(e.trigger);
+            $btn.text('复制失败');
+            setTimeout(function() {
+                $btn.text('复制');
+            }, 2000);
+        });
       });
     </script>
 
