@@ -22,37 +22,60 @@
 {% endif %}
 
 <!-- 网站运行时间 -->
-<div>
-<span id="runtime">1006</span>
-</div>
-<script type="text/javascript">
-  setInterval(function(){
-  	let seconds = 1000;
-        let minutes = 1000 * 60;
-        let hours = 1000 * 60 * 60;
-        let days =  1000 * 60 * 60 * 24;
-        let years = 1000 * 60 * 60 * 24 * 365;
-        let today = new Date();
-        let todayYear = today.getFullYear();
-        let todayMonth = today.getMonth() + 1;
-        let todayDate = today.getDate();
-        let todayHour = today.getHours();
-        let todayMinute = today.getMinutes();
-        let todaySecond = today.getSeconds();
-        //let t1 = Date.UTC(2016,12,01,00,00,00);//北京时间2016-12-1 00:00:00
-    	  let t1 = new Date("2016/08/03 00:00:00");
-        //let t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-    	  let t2 = new Date(todayYear+"/"+todayMonth+"/"+todayDate+" "+todayHour+":"+todayMinute+":"+todaySecond);
-        let diff = t2 - t1;
-    console.log(diff);
-    /*
-        let diffYears = Math.floor(diff/years);
-        let diffDays = Math.floor((diff/days)-diffYears*365);
-        let diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-        let diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-        let diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-        let finallyShowTime = "已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-        document.getElementById("runtime").innerHTML=finallyShowTime;
-        */
-  }, 1000);
+<span id="runtime" aria-live="polite"></span>
+<script>
+(function(){
+  // 起始日期（UTC），网站上线时间 2016-08-03
+  const START_DATE_UTC = new Date(Date.UTC(2016, 7, 3, 0, 0, 0));
+
+  // 补零函数
+  function pad(n){ return String(n).padStart(2, '0'); }
+
+  // 格式化输出
+  function formatCompact(years, days, hours, minutes, seconds){
+    const timePart = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    const parts = [];
+    if (years > 0) parts.push(`${years}年`);
+    if (days > 0) parts.push(`${days}天`);
+    parts.push(timePart);
+    return parts.join(' ');
+  }
+
+  function updateRuntime(){
+    const now = new Date();
+    const nowTs = now.getTime();
+    const startTs = START_DATE_UTC.getTime();
+    const el = document.getElementById('runtime');
+    if (!el) return;
+
+    // 计算整年数
+    let years = new Date(nowTs).getUTCFullYear() - START_DATE_UTC.getUTCFullYear();
+    const anniversary = new Date(START_DATE_UTC.getTime());
+    anniversary.setUTCFullYear(START_DATE_UTC.getUTCFullYear() + years);
+    if (anniversary.getTime() > nowTs) {
+      years--;
+      anniversary.setUTCFullYear(START_DATE_UTC.getUTCFullYear() + years);
+    }
+
+    // 计算剩余天数
+    let diff = nowTs - anniversary.getTime();
+    const SECOND = 1000;
+    const MINUTE = 60 * SECOND;
+    const HOUR = 60 * MINUTE;
+    const DAY = 24 * HOUR;
+
+    const days = Math.floor(diff / DAY);
+    diff -= days * DAY;
+    const hours = Math.floor(diff / HOUR);
+    diff -= hours * HOUR;
+    const minutes = Math.floor(diff / MINUTE);
+    diff -= minutes * MINUTE;
+    const seconds = Math.floor(diff / SECOND);
+
+    el.textContent = `已运行 ${formatCompact(years, days, hours, minutes, seconds)}`;
+  }
+
+  updateRuntime();
+  setInterval(updateRuntime, 1000);
+})();
 </script>
